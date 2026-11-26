@@ -11,7 +11,7 @@ const THEMES=[['lava','Lava','Lava','#ef4444'],['ocean','Oceaan','Ocean','#2563e
 const PACKS=[['skins','€1,99'],['themes','€1,99'],['supporter','€4,99'],['all','€6,99']];
 let S={own:[],skin:'',theme:''};try{S=Object.assign(S,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}apply()};
-const has=p=>S.own.includes(p)||S.own.includes('all');
+const adm=()=>{try{return !!(window.SN_AUTH&&SN_AUTH.isAdmin())}catch(e){return false}};const has=p=>adm()||S.own.includes(p)||S.own.includes('all');
 function apply(){let st=$('snShopCss');if(!st){st=document.createElement('style');st.id='snShopCss';document.head.appendChild(st)}let c='';
  const sk=SKINS.find(x=>x[0]===S.skin);if(sk&&has('skins'))c+=`.snMeAv svg,.profBig svg{filter:${sk[3]}}`;
  const th=THEMES.find(x=>x[0]===S.theme);if(th&&has('themes'))c+=`:root{--red:${th[3]}}nav [aria-selected="true"],.pwBig,.pwSm:not(.alt){background:${th[3]}!important;color:#fff!important}`;
