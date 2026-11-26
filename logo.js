@@ -26,4 +26,8 @@ const ui=()=>{const b=document.createElement('button');b.type='button';b.id='snS
  document.body.appendChild(d);d.querySelector('#snGoNew').onclick=switchNow;d.querySelector('#snStay').onclick=()=>{try{sessionStorage.setItem('sn_stay_old','1')}catch(e){}d.remove()}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(ui,600));else setTimeout(ui,600);
 window.SN_SWITCH=switchNow;
+if(isNew){const h=document.head,m=(t,a)=>{const e=document.createElement(t);for(const k in a)e.setAttribute(k,a[k]);h.appendChild(e)};
+m('link',{rel:'manifest',href:NEWP+'manifest.webmanifest'});m('meta',{name:'theme-color',content:'#0b2a33'});m('link',{rel:'apple-touch-icon',href:NEWP+'icon-192.png'});m('meta',{name:'apple-mobile-web-app-capable',content:'yes'});
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register(NEWP+'sw.js',{scope:NEWP}).catch(()=>{}))}
+const ld2=()=>{const sc=document.createElement('script');sc.src=NEWP+'extra.js?v='+Math.floor(Date.now()/36e5);document.body.appendChild(sc)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ld2);else ld2();
 const ld=()=>{const sc=document.createElement('script');sc.src=NEWP+'shop.js?v='+Math.floor(Date.now()/36e5);document.body.appendChild(sc)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ld);else ld()})();

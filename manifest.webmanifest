@@ -1,0 +1,19 @@
+{
+  "id": "/strong-ninja/",
+  "name": "Strong Ninja",
+  "short_name": "Strong Ninja",
+  "description": "Train als een ninja: push-ups, sixpack, water en groei. Daag je vrienden uit!",
+  "lang": "nl",
+  "start_url": "/strong-ninja/?src=pwa",
+  "scope": "/strong-ninja/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07090c",
+  "theme_color": "#0b2a33",
+  "categories": ["health", "fitness", "lifestyle"],
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
